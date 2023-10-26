@@ -14,6 +14,7 @@ export const useDisplayLoader = () => {
   const { isInitialized: isWatchAddressInitialized } = useWatchedAddresses()
 
   if (!isWatchAddressInitialized || !isLocalStorageSetupDone) {
+    console.log('loader-initialization')
     return (
       <LoaderBoxStyled data-cy="loader-initialization">
         <CircularProgress />
@@ -23,6 +24,7 @@ export const useDisplayLoader = () => {
   }
 
   if (!api) {
+    console.log('loader-rpc-connection')
     return (
       <LoaderBoxStyled data-cy="loader-rpc-connection">
         <CircularProgress />
@@ -32,6 +34,7 @@ export const useDisplayLoader = () => {
   }
 
   if (isAccountLoading) {
+    console.log('loader-accounts-connection')
     return (
       <LoaderBoxStyled data-cy="loader-accounts-connection">
         <CircularProgress />
@@ -41,6 +44,7 @@ export const useDisplayLoader = () => {
   }
 
   if (isLoadingMultisigs) {
+    console.log('loader-multisig')
     return (
       <LoaderBoxStyled data-cy="loader-multisigs">
         <CircularProgress />

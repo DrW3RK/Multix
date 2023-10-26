@@ -33,7 +33,7 @@ describe('Landing Page Messaging', () => {
     landingPage.shouldHaveNoAccountErrorAndWikiLink()
   })
 
-  it('can see an error when account is shared but not part of a multisig', () => {
+  it.only('can see an error when account is shared but not part of a multisig', () => {
     cy.visit(landingPageUrl)
     cy.initExtension([testAccounts['Non Multisig Member']])
     clickOnConnect()

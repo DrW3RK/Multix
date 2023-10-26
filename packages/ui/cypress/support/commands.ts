@@ -112,6 +112,7 @@ Cypress.Commands.add('ensureNoLoadingSpinners', () => {
     loaderAssertion()
       .should('not.exist', { timeout: 5000 })
       .then(() => {
+        console.log(`${loaderName} disappeared or was not present.`)
         cy.log(`${loaderName} disappeared or was not present.`)
       })
   })
